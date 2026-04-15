@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d8dadc",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#ffddba",
+                    "on-surface": "#191c1e",
+                    "tertiary-fixed-dim": "#f2bc82",
+                    "on-secondary-container": "#54647a",
+                    "surface-tint": "#455f88",
+                    "on-tertiary-fixed-variant": "#633f0f",
+                    "on-tertiary-container": "#c6955e",
+                    "on-surface-variant": "#43474e",
+                    "tertiary": "#321b00",
+                    "surface-container": "#eceef0",
+                    "surface-variant": "#e0e3e5",
+                    "inverse-surface": "#2d3133",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#2b1700",
+                    "on-background": "#191c1e",
+                    "outline": "#74777f",
+                    "background": "#f7f9fb",
+                    "primary-fixed-dim": "#adc7f7",
+                    "surface-container-high": "#e6e8ea",
+                    "secondary": "#505f76",
+                    "primary-fixed": "#d6e3ff",
+                    "on-secondary-fixed-variant": "#38485d",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#adc7f7",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#1a365d",
+                    "outline-variant": "#c4c6cf",
+                    "secondary-fixed": "#d3e4fe",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary-fixed": "#0b1c30",
+                    "on-primary-fixed": "#001b3c",
+                    "error-container": "#ffdad6",
+                    "primary": "#002045",
+                    "on-primary-container": "#86a0cd",
+                    "surface-container-highest": "#e0e3e5",
+                    "secondary-container": "#d0e1fb",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-bright": "#f7f9fb",
+                    "tertiary-container": "#4f2e00",
+                    "surface": "#f7f9fb",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "secondary-fixed-dim": "#b7c8e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .grid-watermark {
+            background-image: radial-gradient(#c4c6cf 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+        .tonal-shift {
+            background: linear-gradient(180deg, rgba(247,249,251,0.7) 0%, rgba(242,244,246,0.7) 100%);
+        }
+        .id-card-shadow {
+            box-shadow: 0 4px 20px rgba(0, 32, 69, 0.04), 0 12px 40px rgba(0, 32, 69, 0.08);
+        }
+        .barcode-mimic {
+            background: repeating-linear-gradient(90deg, #002045, #002045 1px, transparent 1px, transparent 4px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-background selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-background/70 dark:bg-primary/70 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,32,69,0.04)] transition-colors duration-300">
+<div class="flex justify-between items-center px-6 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-surface-container-low" data-icon="account_balance">account_balance</span>
+<h1 class="text-xl font-bold tracking-[-0.04em] text-primary dark:text-white font-headline tracking-tighter uppercase">REGISTRAR_PORTFOLIO</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-headline tracking-tight uppercase text-sm">
+<a class="text-primary dark:text-white border-b-2 border-primary dark:border-white pb-1" href="#">Dossier</a>
+<a class="text-primary/60 dark:text-surface-container-low/60 hover:text-primary dark:hover:text-white transition-all" href="#">Archives</a>
+<a class="text-primary/60 dark:text-surface-container-low/60 hover:text-primary dark:hover:text-white transition-all" href="#">Transcript</a>
+<a class="text-primary/60 dark:text-surface-container-low/60 hover:text-primary dark:hover:text-white transition-all" href="#">Contact</a>
+</nav>
+<button id="menu-toggle" class="p-2 hover:bg-surface-container-low dark:hover:bg-primary-container transition-all rounded-lg scale-95 active:opacity-80">
+<span class="material-symbols-outlined text-primary dark:text-surface-container-low" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-24 pb-12 px-6 max-w-7xl mx-auto">
+<!-- Hero Section: The Identity Canvas -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start py-12">
+<!-- Left Column: Context Metadata -->
+<div class="lg:col-span-3 space-y-8">
+<div class="space-y-1">
+<p class="font-label text-[10px] uppercase tracking-widest text-outline">Registry Entry</p>
+<p class="font-headline font-bold text-primary">FILE_2024_ALPHA</p>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-primary">
+<p class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">Status</p>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+<span class="font-headline text-sm font-bold text-primary">ACTIVE_ENROLLMENT</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl border-l-4 border-tertiary">
+<p class="font-label text-[10px] uppercase tracking-widest text-outline mb-1">Security</p>
+<span class="font-headline text-sm font-bold text-tertiary">LEVEL_01_CLEARANCE</span>
+</div>
+</div>
+</div>
+<!-- Center Column: The Digital ID Card -->
+<div class="lg:col-span-6 flex justify-center perspective-1000">
+<div class="relative w-full max-w-md bg-surface-container-lowest rounded-full p-8 id-card-shadow border border-outline-variant/10 overflow-hidden">
+<!-- Background Watermark -->
+<div class="absolute inset-0 grid-watermark opacity-30 pointer-events-none"></div>
+<!-- ID Card Content -->
+<div class="relative z-10 space-y-8">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container text-xl" data-icon="id_card">id_card</span>
+</div>
+<div class="font-headline leading-none">
+<p class="text-[10px] uppercase tracking-tighter text-outline">Institutional Identity</p>
+<p class="text-sm font-bold text-primary">ACADEMIC_PASS</p>
+</div>
+</div>
+<!-- Tertiary Stamp Action -->
+<div class="bg-tertiary text-on-tertiary w-14 h-14 rounded-full flex items-center justify-center flex-col scale-110 shadow-lg -mr-4 -mt-4 border-4 border-white">
+<span class="material-symbols-outlined text-lg" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-[7px] font-headline font-bold uppercase tracking-tighter">Verified</span>
+</div>
+</div>
+<!-- Profile Portrait & Bio -->
+<div class="flex flex-col items-center gap-6">
+<div class="relative">
+<div class="w-48 h-48 rounded-xl overflow-hidden border-4 border-surface-container-high shadow-inner">
+<img alt="ID Portrait" class="w-full h-full object-cover grayscale contrast-125" data-alt="Modern high-contrast black and white professional portrait of a young man with a serious expression, studio lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCppYh_d3ta4U2_HyL8vLWCtxWwWSBsQsCjVjyj7wscUtgoEc0iqfU5LhMWrmhFKf_ZthjxJkuAWSCT_Z2a3-ilJT4OiL3nIWgQHreox5SqcFuAe2fpMSKae3fbIdiAM2oXWFItLEesewsqFteKnDfG1ovQUnW7ff_MCJQx9TWuDMcN6VqTVyvpNuP9POwOEzmmcRlsBj2XSJw7U2eJYSmHTG-AqJNMqR6PJN8DduLKtAu6synp-fUbTzRxfHnMgN3f7e2Ogjmvn60"/>
+</div>
+<div class="absolute -bottom-2 -right-2 bg-surface-container-highest px-3 py-1 rounded text-[8px] font-label font-bold text-primary border border-outline-variant/20 uppercase">
+                                    Capture_882-04-X
+                                </div>
+</div>
+<div class="text-center space-y-1">
+<h2 class="text-3xl font-headline font-extrabold text-primary tracking-tighter uppercase">ALEX_R_VAUGHN</h2>
+<p class="text-on-surface-variant font-body text-sm tracking-wide">Advanced Systems Architecture &amp; Design</p>
+</div>
+</div>
+<!-- Meta Grid -->
+<div class="grid grid-cols-2 gap-4 py-4 border-y border-outline-variant/20">
+<div>
+<p class="text-[9px] font-label text-outline uppercase tracking-widest">Student ID</p>
+<p class="font-headline font-bold text-primary text-sm tracking-tight">ID-882-04-X-2024</p>
+</div>
+<div class="text-right">
+<p class="text-[9px] font-label text-outline uppercase tracking-widest">Major Code</p>
+<p class="font-headline font-bold text-primary text-sm tracking-tight">ARC-8812-SYS</p>
+</div>
+<div>
+<p class="text-[9px] font-label text-outline uppercase tracking-widest">Issue Date</p>
+<p class="font-headline font-bold text-primary text-sm tracking-tight">09 / 12 / 2023</p>
+</div>
+<div class="text-right">
+<p class="text-[9px] font-label text-outline uppercase tracking-widest">Valid Until</p>
+<p class="font-headline font-bold text-primary text-sm tracking-tight">PERMANENT_LOG</p>
+</div>
+</div>
+<!-- Barcode Footer -->
+<div class="pt-4 flex flex-col items-center gap-2">
+<div class="w-full h-10 barcode-mimic opacity-40"></div>
+<p class="text-[8px] font-label text-outline tracking-[0.4em] uppercase">INSTITUTIONAL_DATA_ENCRYPTED</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Secondary Actions -->
+<div class="lg:col-span-3 space-y-6 flex flex-col justify-center">
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-headline font-bold uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-primary-container transition-all group">
+<span>Export Transcript</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="w-full bg-surface-container-high text-primary py-4 rounded-lg font-headline font-bold uppercase tracking-widest flex items-center justify-center gap-3 hover:bg-surface-variant transition-all">
+<span>View Certificates</span>
+<span class="material-symbols-outlined text-sm" data-icon="workspace_premium">workspace_premium</span>
+</button>
+<div class="p-6 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-xl space-y-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="priority_high">priority_high</span>
+<p class="font-label text-[10px] font-bold uppercase tracking-widest">Pending Review</p>
+</div>
+<p class="text-xs leading-relaxed opacity-80">2 dossiers are currently in the validation queue. Expected completion: T-48 Hours.</p>
+</div>
+</div>
+</section>
+<!-- Recent Archives Section -->
+<section class="mt-24 space-y-12">
+<div class="flex justify-between items-end">
+<div class="space-y-2">
+<p class="font-label text-xs uppercase tracking-[0.3em] text-outline">Category: Projects</p>
+<h3 class="text-4xl font-headline font-bold text-primary tracking-tighter">RECENT_ARCHIVES</h3>
+</div>
+<a class="font-label text-xs uppercase tracking-widest text-primary border-b border-primary pb-1 hover:opacity-70 transition-opacity" href="#">Browse_All_Files</a>
+</div>
+<!-- Asymmetric Bento Grid for Archives -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 min-h-[600px]">
+<!-- Large Project Card -->
+<div class="md:col-span-8 group relative bg-surface-container-lowest rounded-full overflow-hidden border border-outline-variant/10 shadow-sm hover:shadow-xl transition-all">
+<img alt="Architecture Project" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-80" data-alt="Interior of a modern minimalist architectural structure with sharp geometric shadows and soft natural light from a skylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZHM5D7eOhnuZ8ejmn12UahL5p_Fp4dKntbNY7Ms89IZPtfnqTbOra6Ev4_oX2_nNgZS1K_MWgUztyhcbb3oWlAYMMNjQltEMynkTBNVjZF1zpGCHDRfNFDXCFpeg781Q4CMx3234IcCgFUXNHo3XaM4k9y5l0aQith5ydEIQHg8fqXUiyh6koMDxnVw4WF9pKMJdE52V-q5b2avZrNzT-5VJNyU4Sa4Orvaxyq9GskGb17Su-SJgzC6XgF0U6Q2-56-IaHIlzeEM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent p-8 flex flex-col justify-end text-white">
+<p class="font-label text-[10px] uppercase tracking-widest opacity-80 mb-2">Ref: ARCH-01</p>
+<h4 class="text-3xl font-headline font-bold mb-4">NEURAL_INFRASTRUCTURE</h4>
+<div class="flex gap-4">
+<span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-headline uppercase tracking-widest">Structural Design</span>
+<span class="px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-[10px] font-headline uppercase tracking-widest">2024</span>
+</div>
+</div>
+<button class="absolute top-6 right-6 w-12 h-12 bg-white text-primary rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+<span class="material-symbols-outlined" data-icon="open_in_new">open_in_new</span>
+</button>
+</div>
+<!-- Secondary Project Card -->
+<div class="md:col-span-4 group relative bg-surface-container-lowest rounded-full overflow-hidden border border-outline-variant/10 shadow-sm hover:shadow-xl transition-all">
+<img alt="Cyber Security Project" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-80" data-alt="High-tech glowing circuit board with digital blue light and complex interconnected patterns representing cybersecurity infrastructure" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9ZOyJ4BvETuujTw7D01MOD-HoFXNvz0DLz8V2F-Dj9xt9OzC0XUWbsnbOkOSlYaaWqBof5khpzud3k8A7I6JhdUGfm8FFr235D9TWG_XKO6QxoQ9EWVzrVemU_zvl3OcbSVxfP5IEVFC3SH98DuMISZh4jkK9XN3Q5R2KahEDufMv1GzH7s1zHo5ZjFUSrBD5LpwPCeTffdrhg8PA5fsMofq_FFJpFHaT3ust1O5zRnw_QhF1yAIniczZzQF_YwBt4laHtnh64iY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/90 via-tertiary/20 to-transparent p-8 flex flex-col justify-end text-white">
+<p class="font-label text-[10px] uppercase tracking-widest opacity-80 mb-2">Ref: SEC-02</p>
+<h4 class="text-xl font-headline font-bold mb-2">CRYPT_LEDGER_V2</h4>
+<span class="text-[10px] font-headline uppercase tracking-widest opacity-80">Security Audit</span>
+</div>
+</div>
+<!-- Tertiary Project Card -->
+<div class="md:col-span-4 group relative bg-surface-container-lowest rounded-full overflow-hidden border border-outline-variant/10 shadow-sm hover:shadow-xl transition-all">
+<img alt="Graphic Design Project" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 opacity-80" data-alt="Abstract minimalist poster design with sharp geometric shapes in deep blues and greys against a stark white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJxeHttC8VSH9xLddiGEE7UxiYLW0GkGsTsHUsLHARYYBM-2SN0Sy6T0sERrCa9tfiH9YGDOGqrENFleA_EzU5lQzNRdLtdIxxLX-oh6FUeuEqualjInUDlH22UWvA2jKGiDqe7IpMlJScp2aeTl_E6HFEadJhrpChGHO13G_1GfblUUdttLFnv9yNrYe6WQFZQObEHw0-cDsSrWyFYQgvUElxMVIUtKKmry5nAyGYpxxqcVlwVI5KpoUAC2Y0IQy05yV-WPP86HA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/90 via-primary-container/20 to-transparent p-8 flex flex-col justify-end text-white">
+<p class="font-label text-[10px] uppercase tracking-widest opacity-80 mb-2">Ref: VIS-04</p>
+<h4 class="text-xl font-headline font-bold mb-2">INSTITUTIONAL_STYLE_GUIDE</h4>
+<span class="text-[10px] font-headline uppercase tracking-widest opacity-80">Brand Design</span>
+</div>
+</div>
+<!-- Summary List Card -->
+<div class="md:col-span-8 bg-surface-container-low rounded-full p-8 flex flex-col justify-between border border-outline-variant/20">
+<div class="grid grid-cols-2 gap-12">
+<div class="space-y-4">
+<p class="font-label text-[10px] uppercase tracking-widest text-outline">Archival Summary</p>
+<p class="text-sm font-body leading-relaxed text-on-surface-variant">The current collection comprises 14 verified entries across architecture, software engineering, and visual systems. Each file represents a milestone in the candidate's academic progression.</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="text-right">
+<p class="text-4xl font-headline font-bold text-primary">14</p>
+<p class="font-label text-[10px] uppercase tracking-widest text-outline">Verified Records</p>
+</div>
+<div class="text-right">
+<p class="text-4xl font-headline font-bold text-primary">02</p>
+<p class="font-label text-[10px] uppercase tracking-widest text-outline">Active Research</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 pt-8">
+<span class="w-full h-[1px] bg-outline-variant/40"></span>
+<div class="flex-shrink-0 flex items-center gap-2">
+<span class="material-symbols-outlined text-outline" data-icon="fingerprint">fingerprint</span>
+<span class="text-[9px] font-label uppercase tracking-widest text-outline">Validated_by_Admin_Bot</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-surface-container-low dark:bg-primary border-t border-outline-variant/20">
+<div class="flex flex-col md:flex-row justify-between items-center gap-4 max-w-7xl mx-auto">
+<p class="font-headline text-[10px] uppercase tracking-widest font-medium text-primary dark:text-surface-container-low">© 2024 INSTITUTIONAL ARCHIVE v1.0.42</p>
+<div class="flex items-center gap-8">
+<a class="font-headline text-[10px] uppercase tracking-widest font-medium text-primary dark:text-surface-container-low opacity-60 hover:opacity-100 transition-opacity" href="#">TRANSCRIPT</a>
+<a class="font-headline text-[10px] uppercase tracking-widest font-medium text-primary dark:text-surface-container-low opacity-60 hover:opacity-100 transition-opacity" href="#">PROJECT_LOGS</a>
+<a class="font-headline text-[10px] uppercase tracking-widest font-medium text-primary dark:text-surface-container-low opacity-60 hover:opacity-100 transition-opacity" href="#">CONTACT_RECORDS</a>
+</div>
+<div class="flex items-center gap-2 opacity-40">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+<span class="font-label text-[9px] uppercase tracking-tighter text-primary dark:text-surface-container-low">SERVER_STATUS_ONLINE</span>
+</div>
+</div>
+</footer>
+<!-- Side Navigation Drawer -->
+<div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-[55] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+<aside id="sidebar" class="fixed left-0 top-0 h-full w-80 z-[60] p-6 bg-white dark:bg-primary rounded-r-xl shadow-2xl border-r border-outline-variant/20 translate-x-[-100%] transition-transform duration-500">
+<div class="flex flex-col h-full">
+<div class="flex items-center gap-4 pb-8 mb-8 border-b border-outline-variant/20">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img alt="Student Profile Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAybZjV62rnMuykMKde3_A48-XDYMXe7SJaiplaVMVNlYWK2rXukCdBQBoKT8KiXY0tU-uUcL0sBkqr_0yI7usVwkoa8oq9nKR5Cs9BNvjXxG7z95hCi0BCTEHlV8c2n_8u04Pq_apPocinpbvMqMml41gVETftXiertnBMWGcbCsaFI2Pz1Qki1UbVacCPNTz9howremrFLm11-q1sFw81dAi6XIzF9HczfCu-bcyz7Hp__4FJCJqdv0ux6vvOpf68u_6r6cIFJak"/>
+</div>
+<div class="font-headline uppercase tracking-tight">
+<p class="font-bold text-lg text-primary dark:text-white">ID_VERIFIED_USER</p>
+<p class="text-[10px] text-outline">REGISTRATION NO. 882-04-X</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-4 px-4 py-3 bg-surface-container-low dark:bg-primary-container text-primary dark:text-white font-bold rounded-lg transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="id_card">id_card</span>
+<span class="font-headline uppercase tracking-tight">Dossier</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-primary/70 dark:text-surface-container-low/70 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="folder_open">folder_open</span>
+<span class="font-headline uppercase tracking-tight">Archives</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-primary/70 dark:text-surface-container-low/70 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-headline uppercase tracking-tight">Transcript</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-primary/70 dark:text-surface-container-low/70 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-headline uppercase tracking-tight">Contact</span>
+</a>
+</nav>
+<div class="pt-8 mt-8 border-t border-outline-variant/20">
+<p class="font-label text-[10px] uppercase tracking-widest text-outline">CLEARANCE: LEVEL_01</p>
+</div>
+</div>
+</aside>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function toggleSidebar() {
+        const isOpen = sidebar.style.transform === 'translateX(0%)';
+        if (isOpen) {
+            sidebar.style.transform = 'translateX(-100%)';
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+        } else {
+            sidebar.style.transform = 'translateX(0%)';
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', toggleSidebar);
+</script>
+</body></html>
